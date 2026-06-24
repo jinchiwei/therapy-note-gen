@@ -54,12 +54,26 @@ cp .env.example .env                # then put your real ANTHROPIC_API_KEY in .e
 
 ## Run
 
+**Easiest — double-click the launcher** (after the one-time setup above):
+
+- **Windows:** double-click **`start.bat`**
+- **macOS/Linux:** double-click **`start.command`** (first time only, run `chmod +x start.command`)
+
+It activates the conda env, starts the app, and opens the browser to the note
+generator automatically. Close the window (or `Ctrl+C`) to stop.
+
+> The launchers assume a conda env named **`therapy-note-gen`**. `start.bat` looks
+> for miniconda in the usual install spots; if conda lives elsewhere, open the
+> file in Notepad and point `CONDA_BAT` at your `...\Scripts\activate.bat`.
+
+**Or run it manually:**
+
 ```bash
 python app.py
 ```
 
-The app reads your key from `.env` automatically — no shell setup needed. Open
-<http://127.0.0.1:5005>, paste a transcript, click **Generate note**, copy the
+The app reads your key from `.env` automatically — no shell setup needed. It opens
+<http://127.0.0.1:5005>; paste a transcript, click **Generate note**, copy the
 result. The "What was redacted" panel shows exactly which spans were replaced
 before sending — review it to confirm nothing identifying slipped past.
 

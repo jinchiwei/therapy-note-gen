@@ -177,4 +177,12 @@ def generate():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "5005"))
+    url = f"http://127.0.0.1:{port}"
+    # Pop the browser open automatically a moment after the server starts.
+    if os.environ.get("NO_BROWSER") != "1":
+        import threading
+        import webbrowser
+
+        threading.Timer(1.5, lambda: webbrowser.open(url)).start()
+    print(f"\n  Therapy Note Generator running at {url}\n  Close this window (or press Ctrl+C) to stop.\n")
     app.run(host="127.0.0.1", port=port, debug=False)
