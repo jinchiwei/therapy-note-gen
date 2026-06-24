@@ -66,6 +66,13 @@ generator automatically. Close the window (or `Ctrl+C`) to stop.
 > for miniconda in the usual install spots; if conda lives elsewhere, open the
 > file in Notepad and point `CONDA_BAT` at your `...\Scripts\activate.bat`.
 
+### Pin it to the Windows taskbar
+
+Windows won't pin a `.bat` directly. Double-click **`make_shortcut.bat`** once — it
+puts a **"Therapy Notes"** shortcut on the Desktop. Then right-click that shortcut
+(**Show more options** on Windows 11) → **Pin to taskbar**. After that it's a single
+click from the taskbar, and you can delete the Desktop copy.
+
 **Or run it manually:**
 
 ```bash
