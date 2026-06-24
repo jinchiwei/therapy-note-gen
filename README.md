@@ -24,30 +24,47 @@ transcript ──▶ Presidio de-id ──▶ [PERSON_1] placeholders ──▶ 
 
 ## Setup
 
-Python 3.9+.
+You only need **Python 3.9+** installed (no Anaconda/conda required). On Windows,
+get it from [python.org](https://www.python.org/downloads/) and tick **"Add
+Python to PATH"** during install. You also need [Git](https://git-scm.com/download/win)
+(or just download the repo as a ZIP from GitHub).
 
-```bash
-cd note-gen
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+### Windows (PowerShell)
+
+```powershell
+git clone https://github.com/jinchiwei/therapy-note-gen.git
+cd therapy-note-gen
+python -m venv .venv
+.venv\Scripts\Activate.ps1          # if blocked: use cmd and run .venv\Scripts\activate.bat
 pip install -r requirements.txt
 python -m spacy download en_core_web_lg
-
-cp .env.example .env        # then put your real ANTHROPIC_API_KEY in .env
+copy .env.example .env              # then open .env and paste your real ANTHROPIC_API_KEY
 ```
 
-> On Jin's Mac you can install into the `deepdream` conda env instead of a venv.
+### macOS / Linux
+
+```bash
+git clone https://github.com/jinchiwei/therapy-note-gen.git
+cd therapy-note-gen
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python -m spacy download en_core_web_lg
+cp .env.example .env                # then put your real ANTHROPIC_API_KEY in .env
+```
 
 ## Run
 
 ```bash
-# load the API key (or use a dotenv loader / set it in your shell)
-export $(grep -v '^#' .env | xargs)
 python app.py
 ```
 
-Open <http://127.0.0.1:5005>, paste a transcript, click **Generate note**, copy
-the result. The "What was redacted" panel shows exactly which spans were
-replaced before sending — review it to confirm nothing identifying slipped past.
+The app reads your key from `.env` automatically — no shell setup needed. Open
+<http://127.0.0.1:5005>, paste a transcript, click **Generate note**, copy the
+result. The "What was redacted" panel shows exactly which spans were replaced
+before sending — review it to confirm nothing identifying slipped past.
+
+> First launch downloads nothing further; the one-time `spacy download` above is
+> the only large install. To stop the app, press `Ctrl+C` in the terminal.
 
 ## Quick CLI test (no web UI)
 

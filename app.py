@@ -11,6 +11,10 @@ Privacy posture:
 
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()  # read ANTHROPIC_API_KEY (and NOTE_MODEL / PORT) from .env automatically
+
 from flask import Flask, render_template_string, request, jsonify
 
 from deid import deidentify, reidentify
