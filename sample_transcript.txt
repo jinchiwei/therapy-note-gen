@@ -1,0 +1,16 @@
+THERAPIST: Good to see you, Daniel. How are you feeling today?
+CLIENT: Honestly, pretty tired. I haven't been sleeping well.
+THERAPIST: Tired. Say more about that.
+CLIENT: I keep thinking about moving back to Brazil. I'm supposed to fly out of San Francisco on March 14th. Part of me is excited, but part of me feels like I'm just running away.
+THERAPIST: Running away from what?
+CLIENT: My ex, Sofia. We broke up in January and I still live near her family. I keep running into her sister at the gym. It's a lot.
+THERAPIST: That sounds heavy. What keeps the thoughts about Sofia coming back?
+CLIENT: I think I miss feeling chosen by someone. My friend Marcus said maybe I'm using my new hobbies as a distraction. He might be right.
+THERAPIST: Do you feel like the hobbies are helping or avoiding?
+CLIENT: Both, I guess. When I'm rock climbing I don't think about her. But when I'm alone at night it all comes back. I also feel guilty leaving my parents behind in Oakland.
+THERAPIST: It sounds like there's a conflict between taking care of yourself and the people you'd leave.
+CLIENT: Exactly. And I always feel like I have to fix everyone's problems. It's exhausting. I want a slower, calmer life where I'm not pretending all the time.
+THERAPIST: Pretending?
+CLIENT: Putting on an act so people like me. I put up a wall. I want to be more okay being vulnerable, I think.
+THERAPIST: That's a meaningful thing to notice. Let's keep exploring that.
+CLIENT: Yeah. I'd like that.
