@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # read ANTHROPIC_API_KEY (and NOTE_MODEL / PORT) from .env automatically
 
-from flask import Flask, render_template_string, request, jsonify
+from flask import Flask, render_template_string, request, jsonify, send_from_directory
 
 from deid import deidentify, reidentify
 from notegen import generate_note, DEFAULT_MODEL
@@ -28,6 +28,7 @@ PAGE = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Therapy Note Generator</title>
+<link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -155,6 +156,11 @@ $("#copy").addEventListener("click", () => {
 @app.get("/")
 def index():
     return render_template_string(PAGE, model=DEFAULT_MODEL)
+
+
+@app.get("/favicon.ico")
+def favicon():
+    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), "app.ico")
 
 
 @app.post("/generate")
